@@ -1,9 +1,8 @@
-import { NextPage } from 'next';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import '../styles/globals.css';
+import { useAnalytics } from '../lib/analytics';
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
+  useAnalytics();
   return <Component {...pageProps} />;
 }
-
-export default MyApp;
