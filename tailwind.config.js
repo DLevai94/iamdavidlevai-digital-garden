@@ -1,12 +1,15 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily, colors } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        black: '#323232',
+        ...colors
+      },
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont', ...fontFamily.sans]
       }
