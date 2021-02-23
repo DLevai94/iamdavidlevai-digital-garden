@@ -1,4 +1,4 @@
-const UsesPage = (): NextPage => {
+const UsesPage = () => {
   return <div>WIP</div>;
 };
 
