@@ -10,7 +10,7 @@ export default function Home() {
             <Link href="/">
               <a className="flex items-center order-first mb-4 font-medium text-gray-900 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center md:mb-0">
                 <span className="text-xl font-black leading-none text-gray-900 select-none logo">
-                  Dávid<span className="text-gray-500">Lévai</span>
+                  Dávid<span className="text-gray-500"> Lévai</span>
                 </span>
               </a>
             </Link>
