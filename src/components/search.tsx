@@ -13,6 +13,7 @@ const fuseOptions = {
 
 const names: Array<string> = ['react', 'tailwind', 'freelancing', 'saas', 'youtube'];
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function Search() {
   const [results, setResults] = useState();
 

@@ -6,6 +6,7 @@ import Layout from '../../src/components/blog-layout';
 import { POSTS_PATH, postFilePaths } from '../../src/lib/mdxUtils';
 import Search from '../../src/components/search';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function Index({ posts }) {
   return (
     <Layout>
@@ -37,6 +38,7 @@ export default function Index({ posts }) {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function getStaticProps() {
   const posts = postFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath));

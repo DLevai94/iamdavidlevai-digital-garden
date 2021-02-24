@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '../src/components/footer';
 import Navbar from '../src/components/navbar';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function Home() {
   return (
     <>

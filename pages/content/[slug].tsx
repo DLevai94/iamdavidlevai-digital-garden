@@ -18,9 +18,11 @@ const components: MdxRemote.Components = { Components };
 
 interface Props {
   mdxSource: MdxRemote.Source;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   frontMatter: any;
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function Content({ mdxSource, frontMatter }: Props) {
   const router = useRouter();
   const content = hydrate(mdxSource, { components });
@@ -56,6 +58,7 @@ export default function Content({ mdxSource, frontMatter }: Props) {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export async function getStaticProps({ params }) {
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
@@ -71,6 +74,7 @@ export async function getStaticProps({ params }) {
   return { props: { mdxSource, frontMatter: data } };
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const getStaticPaths = async () => {
   const paths = postFilePaths
     // Remove file extensions for page paths

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const Navbar = () => {
   const router = useRouter();
   return (

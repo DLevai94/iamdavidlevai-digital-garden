@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const CustomLink = (props) => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
