@@ -5,6 +5,10 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
+    backdropFilter: {
+      none: 'none',
+      blur: 'blur(20px)'
+    },
     extend: {
       colors: {
         black: '#323232',
@@ -18,5 +22,10 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')]
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+    require('tailwindcss-filters')
+  ]
 };

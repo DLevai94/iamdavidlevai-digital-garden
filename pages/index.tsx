@@ -1,66 +1,31 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '../components/footer';
+import Navbar from '../components/navbar';
 
 export default function Home() {
   return (
     <>
-      <section className="bg-white" id="">
-        <header>
-          <div className="flex flex-col flex-wrap items-center px-8 py-6 mx-auto max-w-7xl md:flex-row">
-            <Link href="/">
-              <a className="flex items-center order-first mb-4 font-medium text-gray-900 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center md:mb-0">
-                <span className="text-xl font-black leading-none text-gray-900 select-none logo">
-                  Dávid<span className="text-gray-500"> Lévai</span>
-                </span>
-              </a>
-            </Link>
-            <nav className="flex flex-wrap items-center justify-center text-base font-bold tracking-tight md:ml-auto">
-              <Link href="/content">
-                <a className="mr-5 hover:text-indigo-900" id="">
-                  Content
-                </a>
-              </Link>
-              <Link href="/uses">
-                <a className="mr-5 hover:text-indigo-900" id="">
-                  Uses
-                </a>
-              </Link>
-              <Link href="/">
-                <a className="mr-5 hover:text-indigo-900" id="">
-                  About
-                </a>
-              </Link>
-            </nav>
-            <button
-              className="inline-flex items-center px-3 py-2 mt-4 text-sm font-bold text-gray-700 bg-gray-200 border-0 rounded focus:outline-none hover:bg-gray-100 md:mt-0 transition duration-300"
-              id=""
-            >
-              Work Together
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
-                id=""
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-        </header>
+      <section>
+        <Navbar />
 
         <div className="max-w-3xl mx-8 mt-4 lg:mx-auto md:mt-16">
-          <h1 className="mb-8 text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl" id="">
-            <img
-              src="https://pbs.twimg.com/profile_images/1356594503919009797/BcAcAhQT_400x400.png"
-              className="border-2 border-gray-200 rounded-full inline w-24 h-24 shadow-md mr-4"
+          <div className="flex flex-col md:flex-row justify-start items-center mb-8">
+            <Image
+              src="/davidlevai-icon.png"
               alt="An image about David Levai"
+              className="border-2 border-gray-200 rounded-full w-24 h-24 shadow-md"
+              width={56}
+              height={56}
+              layout="fixed"
+              quality={60}
+              priority
+              loading="eager"
             />
-            Dávid's <span className="">Digital Garden</span>
-          </h1>
+            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl ml-4">
+              Dávid's Digital Garden
+            </h1>
+          </div>
           <h2 className="inline-block px-2 mb-4 text-base font-semibold leading-normal tracking-wide text-gray-800 bg-yellow-100 sm:text-lg">
             Work in progress, so please come back after March 1, 2021 to get the full experience.
           </h2>

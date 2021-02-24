@@ -1,0 +1,47 @@
+---
+title: Glassmorphism with Tailwind CSS Under 60 seconds
+slug: glassmorphism-with-tailwind-css-under-60-seconds
+description: Glassmorphism with Tailwind CSS Under 60 seconds
+date: 17-12-2020
+---
+If you prefer a quick 1 min video:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sIRbiNKJ0Cc" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+Glassmorphism is an ongoing trend right now in User interfaces. The new macOS, Big Sur brings a lot of it into the OS, and Microsoft has it for years with Aero UI, then later FluentUI.
+
+
+To recreate this effect on the web, we only need a few css properties, but what if we want to use our loved Tailwind?
+
+We need these utility classes: `bg-opacity-{xy}`, `bg-clip-padding`, `bg-{color}`. We can add a little border and shadow to look better with these: `border border-{color}`, `shadow-{size}`.
+
+And to completely recreate the effect, we should blur the background. We've got 2 options here:
+
+### 1. Inline styles
+Add a style property to the card div: `style="backdrop-filter: blur(20px);"`.
+
+[You can access the full code here](https://play.tailwindcss.com/LTnkNgDSLj)
+
+### 2. Extend Tailwind
+We can use [Tailwindcss-filters](https://github.com/benface/tailwindcss-filters) to extend it and use `backdrop-filter` as a utility class.
+
+Just `yarn add tailwindcss-filters`, then extend your `tailwind.config` file:
+
+```js:tailwind.config.js
+module.exports = {
+  theme: {
+    backdropFilter: {
+      'none': 'none',
+      'blur': 'blur(20px)',
+    },
+  },
+  plugins: [
+    require('tailwindcss-filters'),
+  ],
+};
+```
+
+And now you can use the `backdrop-filter-blur` utility class on your HTML.
+
+---
+
+Do you have any other quick & easy solutions to common things with Tailwind?
