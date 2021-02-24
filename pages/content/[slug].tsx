@@ -5,13 +5,13 @@ import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 import { MdxRemote } from 'next-mdx-remote/types';
 import matter from 'gray-matter';
+import RHP from '@mapbox/rehype-prism';
 import codetitle from 'remark-code-titles';
-import rhSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
 
 import Layout from '../../components/blog-layout';
 import Components from '../../components/mdx-components';
-import { POSTS_PATH, postFilePaths, mdxPrismPlugin } from '../../lib/mdxUtils';
+import { POSTS_PATH, postFilePaths } from '../../lib/mdxUtils';
 
 const components: MdxRemote.Components = { Components };
 
@@ -53,7 +53,7 @@ export async function getStaticProps({ params }) {
     components,
     mdxOptions: {
       remarkPlugins: [codetitle],
-      rehypePlugins: [mdxPrismPlugin, rhSlug]
+      rehypePlugins: [RHP]
     },
     scope: data
   });
