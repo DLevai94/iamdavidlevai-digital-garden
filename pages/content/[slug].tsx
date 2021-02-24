@@ -8,6 +8,7 @@ import matter from 'gray-matter';
 import RHP from '@mapbox/rehype-prism';
 import codetitle from 'remark-code-titles';
 import { useRouter } from 'next/router';
+import { NextSeo, BlogJsonLd } from 'next-seo';
 
 import Layout from '../../components/blog-layout';
 import Components from '../../components/mdx-components';
@@ -25,6 +26,7 @@ export default function Content({ mdxSource, frontMatter }: Props) {
   const content = hydrate(mdxSource, { components });
   return (
     <Layout>
+      <NextSeo title={frontMatter.title} description={frontMatter.description} />
       <article className="prose lg:prose-xl mb-8">
         <h1>{frontMatter.title}</h1>
         {content}
@@ -41,6 +43,15 @@ export default function Content({ mdxSource, frontMatter }: Props) {
         </p>
       </article>
       <Image width={200} height={40} src="/signature.svg" />
+      <BlogJsonLd
+        authorName="David Levai"
+        title={frontMatter.title}
+        description={frontMatter.description}
+        url={`https://davidlevai.com${router?.asPath}`}
+        datePublished="12-17-2020"
+        dateModified="12-17-2020"
+        images={['']}
+      />
     </Layout>
   );
 }
