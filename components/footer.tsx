@@ -14,7 +14,7 @@ const Footer = () => {
               software development. No spam, sending out weekly.
             </p>
             <form
-              action="http://newsletter.davidlevai.com/add_subscriber"
+              action="http://freelancing-newsletter.davidlevai.com/add_subscriber"
               method="post"
               id="revue-form"
               name="revue-form"
