@@ -10,9 +10,9 @@ import codetitle from 'remark-code-titles';
 import { useRouter } from 'next/router';
 import { NextSeo, BlogJsonLd } from 'next-seo';
 
-import Layout from '../../components/blog-layout';
-import Components from '../../components/mdx-components';
-import { POSTS_PATH, postFilePaths } from '../../lib/mdxUtils';
+import Layout from '../../src/components/blog-layout';
+import Components from '../../src/components/mdx-components';
+import { POSTS_PATH, postFilePaths } from '../../src/lib/mdxUtils';
 
 const components: MdxRemote.Components = { Components };
 

@@ -1,15 +1,12 @@
-import { useState } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
-import Layout from '../../components/blog-layout';
-import { POSTS_PATH, postFilePaths } from '../../lib/mdxUtils';
-
-const names: Array<string> = ['react', 'tailwind', 'freelancing', 'saas', 'youtube'];
+import Layout from '../../src/components/blog-layout';
+import { POSTS_PATH, postFilePaths } from '../../src/lib/mdxUtils';
+import Search from '../../src/components/search';
 
 export default function Index({ posts }) {
-  const [results, setResults] = useState();
   return (
     <Layout>
       <section className="py-24 bg-white">
@@ -22,20 +19,7 @@ export default function Index({ posts }) {
               Articles, videos, and notes about things that I am interested in. Generally speaking building business,
               building apps, freelancing, productivity, working out, and some other millenial things.
             </p>
-            <input
-              type="text"
-              placeholder="Search"
-              onChange={async (e) => {
-                const { value } = e.currentTarget;
-                // Dynamically load fuse.js
-                const Fuse = (await import('fuse.js')).default;
-                const fuse = new Fuse(names);
-
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                setResults(fuse.search(value) as any);
-              }}
-            />
-            <pre>Results: {JSON.stringify(results, null, 2)}</pre>
+            <Search />
           </div>
         </div>
       </section>
