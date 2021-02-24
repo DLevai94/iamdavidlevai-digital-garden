@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -5,7 +6,10 @@ import Link from 'next/link';
 import Layout from '../../components/blog-layout';
 import { POSTS_PATH, postFilePaths } from '../../lib/mdxUtils';
 
+const names = ['react', 'tailwind', 'freelancing', 'saas', 'youtube'];
+
 export default function Index({ posts }) {
+  const [results, setResults] = useState();
   return (
     <Layout>
       <section className="py-24 bg-white">
@@ -18,9 +22,19 @@ export default function Index({ posts }) {
               Articles, videos, and notes about things that I am interested in. Generally speaking building business,
               building apps, freelancing, productivity, working out, and some other millenial things.
             </p>
-            <p className="text-gray-400">
-              <span className="font-medium text-gray-700">Trusted by</span> over 100 subscribers.
-            </p>
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={async (e) => {
+                const { value } = e.currentTarget;
+                // Dynamically load fuse.js
+                const Fuse = (await import('fuse.js')).default;
+                const fuse = new Fuse(names);
+
+                setResults(fuse.search(value));
+              }}
+            />
+            <pre>Results: {JSON.stringify(results, null, 2)}</pre>
           </div>
         </div>
       </section>
