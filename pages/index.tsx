@@ -29,7 +29,7 @@ export default function Home() {
           <h2 className="inline-block px-2 mb-4 text-base font-semibold leading-normal tracking-wide text-gray-800 bg-yellow-100 sm:text-lg">
             Work in progress, so please come back after March 1, 2021 to get the full experience.
           </h2>
-          <p className="mb-8 text-base font-light leading-relaxed text-gray-700 sm:text-lg">
+          <p className="mb-8 text-base font-light leading-relaxed text-gray-700 dark:text-gray-200 sm:text-lg">
             This is my personal site where I post articles, videos, and notes about things that I am interested in.
             Generally speaking building business, building apps, freelancing, productivity, working out, and some other
             millenial things.
@@ -38,12 +38,12 @@ export default function Home() {
 
         <div className="max-w-7xl mx-8 mt-16 overflow-hidden lg:mx-auto p-4">
           <div className="z-10 grid gap-5 md:grid-cols-6 lg:grid-cols-9">
-            <div className="col-span-3 font-sans text-gray-700 bg-gray-50 rounded-3xl group hover:shadow-lg hover:bg-gray-100 transition duration-300">
+            <div className="col-span-3 font-sans text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-50 rounded-3xl group hover:shadow-lg hover:bg-gray-100 transition duration-300">
               <div className="box-border flex flex-col items-start h-full px-2 py-8 mx-4 leading-6 text-center border-solid sm:flex-row sm:items-start sm:text-left">
-                <div className="flex-shrink-0 p-3 font-sans text-gray-700 border border-gray-200 rounded-full">
+                <div className="flex-shrink-0 p-3 font-sans text-gray-700 dark:text-gray-50 border border-gray-200 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="leading-6 text-center text-gray-700 align-middle stroke-current w-7 h-7"
+                    className="leading-6 text-center text-gray-700 dark:text-gray-50 align-middle stroke-current w-7 h-7"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="#2c3e50"
@@ -55,11 +55,11 @@ export default function Home() {
                     <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3M12 12l8-4.5M12 12v9M12 12L4 7.5M16 5.25l-8 4.5" />
                   </svg>
                 </div>
-                <div className="mt-4 font-sans text-left text-gray-700 border-0 border-gray-200 sm:mt-2 sm:ml-4">
+                <div className="mt-4 font-sans text-left text-gray-700 dark:text-gray-50 border-0 border-gray-200 sm:mt-2 sm:ml-4">
                   <h6 className="box-border text-2xl font-bold leading-none tracking-wide text-left border-solid">
                     Projects
                   </h6>
-                  <p className="box-border mx-0 mt-1 mb-0 font-medium leading-loose text-gray-400 border-solid sm:mt-4">
+                  <p className="box-border mx-0 mt-1 mb-0 font-medium leading-loose text-gray-400 dark:text-gray-200 border-solid sm:mt-4">
                     In 2021, I started building in public. Check these out to learn how to create production-ready
                     software.
                   </p>
@@ -67,12 +67,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-span-3 font-sans text-gray-700 border-0 bg-gray-50 rounded-3xl group hover:shadow-lg hover:bg-gray-100 transition duration-300">
+            <div className="col-span-3 font-sans text-gray-700 dark:text-gray-50 border-0 bg-gray-50 dark:bg-gray-700 rounded-3xl group hover:shadow-lg hover:bg-gray-100 transition duration-300">
               <div className="box-border flex flex-col items-start h-full px-2 py-8 mx-4 leading-6 text-center border-solid sm:flex-row sm:items-start sm:text-left">
-                <div className="flex-shrink-0 p-3 font-sans text-gray-700 border border-gray-200 rounded-full">
+                <div className="flex-shrink-0 p-3 font-sans text-gray-700 dark:text-gray-50 border border-gray-200 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="leading-6 text-center text-gray-700 align-middle stroke-current w-7 h-7"
+                    className="leading-6 text-center text-gray-700 dark:text-gray-50 align-middle stroke-current w-7 h-7"
                     width="44"
                     height="44"
                     viewBox="0 0 24 24"
@@ -88,23 +88,23 @@ export default function Home() {
                     <path d="M7 8v.01M7 16v.01" />
                   </svg>
                 </div>
-                <div className="mt-4 font-sans text-left text-gray-700 border-0 border-gray-200 sm:mt-2 sm:ml-4">
+                <div className="mt-4 font-sans text-left text-gray-700 dark:text-gray-50 border-0 border-gray-200 sm:mt-2 sm:ml-4">
                   <h6 className="box-border text-2xl font-bold leading-none tracking-wide text-left border-solid">
                     Content
                   </h6>
-                  <p className="box-border mx-0 mt-1 mb-0 font-medium leading-loose text-gray-400 border-solid sm:mt-4">
+                  <p className="box-border mx-0 mt-1 mb-0 font-medium leading-loose text-gray-400 dark:text-gray-200 border-solid sm:mt-4">
                     Videos and written notes about freelancing, and building production-ready apps.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="col-span-3 font-sans text-gray-700 border-0 bg-gray-50 rounded-3xl group hover:shadow-lg hover:bg-gray-100 transition duration-300">
+            <div className="col-span-3 font-sans text-gray-700 dark:text-gray-50 border-0 bg-gray-50 dark:bg-gray-700 rounded-3xl group hover:shadow-lg hover:bg-gray-100 transition duration-300">
               <div className="box-border flex flex-col items-start h-full px-2 py-8 mx-4 leading-6 text-center border-solid sm:flex-row sm:items-start sm:text-left">
-                <div className="flex-shrink-0 p-3 font-sans text-gray-700 border border-gray-200 rounded-full">
+                <div className="flex-shrink-0 p-3 font-sans text-gray-700 dark:text-gray-50 border border-gray-200 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="leading-6 text-center text-gray-700 align-middle stroke-current w-7 h-7"
+                    className="leading-6 text-center text-gray-700 dark:text-gray-50 align-middle stroke-current w-7 h-7"
                     width="44"
                     height="44"
                     viewBox="0 0 24 24"
@@ -127,11 +127,11 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <div className="mt-4 font-sans text-left text-gray-700 border-0 border-gray-200 sm:mt-2 sm:ml-4">
+                <div className="mt-4 font-sans text-left text-gray-700 dark:text-gray-50 border-0 border-gray-200 sm:mt-2 sm:ml-4">
                   <h6 className="box-border text-2xl font-bold leading-none tracking-wide text-left border-solid">
                     Mentoring
                   </h6>
-                  <p className="box-border mx-0 mt-1 mb-0 font-medium leading-loose text-gray-400 border-solid sm:mt-4">
+                  <p className="box-border mx-0 mt-1 mb-0 font-medium leading-loose text-gray-400 dark:text-gray-200 border-solid sm:mt-4">
                     I help software developers how to become freelancers, and how to grow themselves in business.
                   </p>
                 </div>

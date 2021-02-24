@@ -4,13 +4,13 @@ import React from 'react';
 const Footer = () => {
   return (
     <>
-      <section className="py-24 bg-white">
+      <section className="py-24">
         <div className="max-w-3xl px-10 mx-auto xl:px-5">
           <div className="flex flex-col justify-center space-y-8">
-            <h2 className="w-full mx-auto text-4xl font-extrabold leading-none text-left text-gray-900 sm:text-5xl md:text-7xl">
+            <h2 className="w-full mx-auto text-4xl font-extrabold leading-none text-left sm:text-5xl md:text-7xl">
               Weekly Newsletter
             </h2>
-            <p className="w-full max-w-3xl mx-auto text-xl text-left text-gray-500 md:text-2xl">
+            <p className="w-full max-w-3xl mx-auto text-xl text-left text-gray-500 dark:text-gray-200 md:text-2xl">
               I started writing a newsletter where I post about business journey, and curate content about modern
               software development. No spam, sending out weekly.
             </p>
@@ -50,17 +50,17 @@ const Footer = () => {
               </div>
             </form>
             <p className="text-gray-400">
-              <span className="font-medium text-gray-700">Trusted by</span> over 100 subscribers.
+              <span className="font-medium text-gray-700 dark:text-gray-200">Trusted by</span> over 100 subscribers.
             </p>
           </div>
         </div>
       </section>
-      <footer className="text-gray-700 bg-white body-font">
+      <footer className="">
         <div className="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
-          <a href="#_" className="text-xl font-black leading-none text-gray-900 select-none logo">
+          <a href="#_" className="text-xl font-black leading-none select-none logo">
             Dávid <span className="text-gray-500">Lévai</span>
           </a>
-          <p className="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">
+          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">
             &copy; 2021 Dávid Lévai
           </p>
           <span className="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
