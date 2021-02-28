@@ -9,7 +9,8 @@ export const useAnalytics = () => {
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
       Fathom.load(process.env.NEXT_PUBLIC_FATHOM_SITE_ID as string, {
-        includedDomains: ['davidlevai.com']
+        includedDomains: ['davidlevai.com'],
+        url: 'https://peacock.davidlevai.com/script.js'
       });
     }
 

@@ -21,6 +21,7 @@ export default function Search() {
     <>
       <input
         type="text"
+        className="h-16"
         placeholder="Search"
         onChange={async (e) => {
           const { value } = e.currentTarget;
