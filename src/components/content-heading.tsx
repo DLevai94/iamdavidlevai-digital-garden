@@ -37,7 +37,7 @@ const ContentHeading = () => {
                   <img
                     className="h-10 w-10 rounded-full"
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=xwdCGdMT1c&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt
+                    alt=""
                   />
                 </a>
               </div>
@@ -77,7 +77,7 @@ const ContentHeading = () => {
                   <img
                     className="h-10 w-10 rounded-full"
                     src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixqx=xwdCGdMT1c&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt
+                    alt=""
                   />
                 </a>
               </div>
@@ -114,7 +114,7 @@ const ContentHeading = () => {
                   <img
                     className="h-10 w-10 rounded-full"
                     src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixqx=xwdCGdMT1c&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt
+                    alt=""
                   />
                 </a>
               </div>
