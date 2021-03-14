@@ -25,7 +25,7 @@ export default function Home() {
           </h1>
         </div>
         <h2 className="inline-block px-2 mb-4 text-base font-semibold leading-normal tracking-wide text-gray-800 bg-yellow-100 sm:text-lg">
-          Work in progress, so please come back after March 12, 2021 to get the full experience.
+          Work in progress, so please come back after March 15, 2021 to get the full experience.
         </h2>
         <p className="mb-8 text-base font-light leading-relaxed text-gray-700 dark:text-gray-200 sm:text-lg">
           This is my personal site where I post articles, videos, and notes about things that I am interested in.
