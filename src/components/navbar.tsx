@@ -30,7 +30,7 @@ const Navbar = () => {
         </Link>
 
         <nav className="flex flex-wrap items-center justify-center text-base font-bold tracking-tight md:ml-auto">
-          <Link href="/content">
+          <Link href="/blog">
             <a className={`mr-5 hover:text-indigo-900 ${router.pathname === 'content' && 'text-yellow-400'}`}>
               Content
             </a>

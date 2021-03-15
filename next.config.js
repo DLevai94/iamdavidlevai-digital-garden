@@ -7,8 +7,8 @@ module.exports = {
   },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
-      //TODO: generate feed, sitemap scripts.
-      // require('./scripts/feed');
+      require('./scripts/generate-sitemap');
+      require('./scripts/generate-rss');
     }
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
