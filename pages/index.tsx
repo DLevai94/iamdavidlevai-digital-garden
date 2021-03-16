@@ -12,23 +12,23 @@ export default function Home({ posts }) {
   return (
     <Layout>
       <Hero />
-      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+      <div className="pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
         <div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
           <div>
-            <h2 className="text-6xl tracking-tight font-display font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="text-6xl tracking-tight font-display font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               Recent Content
             </h2>
           </div>
           <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
             {posts.map((post) => (
               <div key={post.filePath}>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-500 dark:text-gray-200">
                   <time dateTime={post.data.date}>{dayjs(post.data.date).format('MMM DD, YYYY')}</time>
                 </p>
                 <Link as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`} href={`/blog/[slug]`}>
                   <a className="mt-2 block">
-                    <p className="text-xl font-semibold text-gray-900">{post.data.title}</p>
-                    <p className="mt-3 text-base text-gray-500">{post.data.description}</p>
+                    <p className="text-xl font-semibold text-gray-900 dark:text-white">{post.data.title}</p>
+                    <p className="mt-3 text-base text-gray-500 dark:text-gray-200">{post.data.description}</p>
                   </a>
                 </Link>
                 <div className="mt-3">

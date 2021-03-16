@@ -7,7 +7,7 @@ const Footer = () => {
       <section className="py-24">
         <div className="max-w-3xl px-10 mx-auto xl:px-5">
           <div className="flex flex-col justify-center space-y-8">
-            <h2 className="w-full mx-auto text-4xl font-extrabold leading-none text-left sm:text-5xl md:text-7xl">
+            <h2 className="w-full mx-auto text-4xl font-display font-extrabold leading-none text-left sm:text-5xl md:text-7xl">
               Weekly Newsletter
             </h2>
             <p className="w-full max-w-3xl mx-auto text-xl text-left text-gray-500 dark:text-gray-200 md:text-2xl">
