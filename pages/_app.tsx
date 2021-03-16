@@ -10,7 +10,7 @@ import { useAnalytics } from '../src/lib/analytics';
 export default function MyApp({ Component, pageProps }: AppProps) {
   useAnalytics();
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" defaultTheme="dark">
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>

@@ -12,10 +12,17 @@ module.exports = {
     extend: {
       colors: {
         black: '#323232',
+        darkBg: '#101827',
+        darkBgLight: '#1F2936',
+        'light-blue': colors.lightBlue,
+        teal: colors.teal,
+        rose: colors.rose,
         ...colors
       },
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', ...fontFamily.sans]
+        display: ['GT Super Display', '-apple-system', 'BlinkMacSystemFont', ...fontFamily.sans],
+        sans: ['Space Mono', '-apple-system', 'BlinkMacSystemFont', ...fontFamily.sans],
+        blog: ['-apple-system', 'BlinkMacSystemFont', ...fontFamily.sans]
       }
     }
   },
@@ -24,6 +31,7 @@ module.exports = {
       backgroundColor: ['checked'],
       borderColor: ['checked'],
       inset: ['checked'],
+      scale: ['group-hover', 'hover'],
       zIndex: ['hover', 'active']
     }
   },

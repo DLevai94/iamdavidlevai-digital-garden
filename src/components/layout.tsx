@@ -1,14 +1,15 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Footer from './footer';
 import Navbar from './navbar';
 
-const BlogLayout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div className="max-w-5xl px-10 mx-auto xl:px-5">{children}</div>
+      <main>{children}</main>
       <Footer />
     </>
   );
 };
 
-export default BlogLayout;
+export default Layout;

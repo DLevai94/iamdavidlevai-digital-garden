@@ -29,8 +29,8 @@ export default function Content({ mdxSource, frontMatter }: Props) {
   return (
     <Layout>
       <NextSeo title={frontMatter.title} description={frontMatter.description} />
-      <article className="prose lg:prose-xl mb-8">
-        <h1>{frontMatter.title}</h1>
+      <article className="font-blog prose dark:text-white lg:prose-xl mb-8">
+        <h1 className="dark:text-white">{frontMatter.title}</h1>
         {content}
         <p>
           Let me know your thoughts on{' '}

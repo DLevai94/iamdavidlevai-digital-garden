@@ -18,7 +18,7 @@ const ContentHeading = () => {
           <div>
             <div>
               <a href="#" className="inline-block">
-                <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
+                <span className="inline-flex items-center px-3 py-0.5 rounded-none text-sm font-medium bg-indigo-100 text-indigo-800">
                   Article
                 </span>
               </a>
@@ -35,7 +35,7 @@ const ContentHeading = () => {
                 <a href="#">
                   <span className="sr-only">Paul York</span>
                   <img
-                    className="h-10 w-10 rounded-full"
+                    className="h-10 w-10 rounded-none"
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=xwdCGdMT1c&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
                   />
@@ -56,7 +56,7 @@ const ContentHeading = () => {
           <div>
             <div>
               <a href="#" className="inline-block">
-                <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">
+                <span className="inline-flex items-center px-3 py-0.5 rounded-none text-sm font-medium bg-pink-100 text-pink-800">
                   Video
                 </span>
               </a>
@@ -75,7 +75,7 @@ const ContentHeading = () => {
                 <a href="#">
                   <span className="sr-only">Dessie Ryan</span>
                   <img
-                    className="h-10 w-10 rounded-full"
+                    className="h-10 w-10 rounded-none"
                     src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixqx=xwdCGdMT1c&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
                   />
@@ -96,7 +96,7 @@ const ContentHeading = () => {
           <div>
             <div>
               <a href="#" className="inline-block">
-                <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                <span className="inline-flex items-center px-3 py-0.5 rounded-none text-sm font-medium bg-green-100 text-green-800">
                   Case Study
                 </span>
               </a>
@@ -112,7 +112,7 @@ const ContentHeading = () => {
                 <a href="#">
                   <span className="sr-only">Easer Collins</span>
                   <img
-                    className="h-10 w-10 rounded-full"
+                    className="h-10 w-10 rounded-none"
                     src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixqx=xwdCGdMT1c&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
                   />
