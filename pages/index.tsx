@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import dayjs from 'dayjs';
 import Link from 'next/link';
+import { GetStaticProps } from 'next';
 import Hero from '../src/components/hero';
 import Layout from '../src/components/layout';
 import { POSTS_PATH, postFilePaths } from '../src/lib/mdxUtils';
@@ -25,14 +26,14 @@ export default function Home({ posts }) {
                 <p className="text-sm text-gray-500 dark:text-gray-200">
                   <time dateTime={post.data.date}>{dayjs(post.data.date).format('MMM DD, YYYY')}</time>
                 </p>
-                <Link as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`} href={`/blog/[slug]`}>
+                <Link as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`} href="/blog/[slug]">
                   <a className="mt-2 block">
                     <p className="text-xl font-semibold text-gray-900 dark:text-white">{post.data.title}</p>
                     <p className="mt-3 text-base text-gray-500 dark:text-gray-200">{post.data.description}</p>
                   </a>
                 </Link>
                 <div className="mt-3">
-                  <Link as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`} href={`/blog/[slug]`}>
+                  <Link as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`} href="/blog/[slug]">
                     <a className="text-base font-semibold text-green-600 hover:text-yellow-400 flex flex-row items-center">
                       Read full post{' '}
                       <svg
@@ -44,7 +45,7 @@ export default function Home({ posts }) {
                         className="w-4 h-4 ml-1"
                         viewBox="0 0 24 24"
                       >
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
                     </a>
                   </Link>
@@ -58,8 +59,17 @@ export default function Home({ posts }) {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function getStaticProps() {
+interface Props {
+  props: {
+    posts: {
+      content: string;
+      data: any;
+      filePath: string;
+    };
+  };
+}
+
+export const getStaticProps: GetStaticProps = async (): Promise<Props> => {
   const posts = postFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
     const { content, data } = matter(source);
@@ -71,4 +81,4 @@ export function getStaticProps() {
   });
 
   return { props: { posts } };
-}
+};

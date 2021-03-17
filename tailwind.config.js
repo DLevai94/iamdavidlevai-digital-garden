@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const { fontFamily, colors } = require('tailwindcss/defaultTheme');
 
 module.exports = {

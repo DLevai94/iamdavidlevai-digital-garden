@@ -1,8 +1,10 @@
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import fs from 'fs';
 import path from 'path';
 import Image from 'next/image';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
+// eslint-disable-next-line import/no-unresolved
 import { MdxRemote } from 'next-mdx-remote/types';
 import matter from 'gray-matter';
 import RHP from '@mapbox/rehype-prism';
@@ -22,8 +24,7 @@ interface Props {
   frontMatter: any;
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default function Content({ mdxSource, frontMatter }: Props) {
+const Content: NextPage<Props> = ({ mdxSource, frontMatter }) => {
   const router = useRouter();
   const content = hydrate(mdxSource, { components });
   return (
@@ -56,10 +57,25 @@ export default function Content({ mdxSource, frontMatter }: Props) {
       />
     </Layout>
   );
-}
+};
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export async function getStaticProps({ params }) {
+// type FrontMatterProps = {
+//   title: string;
+//   slug: string;
+//   description: string;
+//   tags: string[];
+//   category: string;
+//   date: string;
+// };
+
+// interface Props {
+//   props: {
+//     mdxSource: MdxRemote.Source;
+//     frontMatter: FrontMatterProps;
+//   };
+// }
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
   const { content, data } = matter(source);
@@ -72,14 +88,15 @@ export async function getStaticProps({ params }) {
     scope: data
   });
   return { props: { mdxSource, frontMatter: data } };
-}
+};
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const getStaticPaths = async () => {
-  const paths = postFilePaths.map((path) => path.replace(/\.mdx?$/, '')).map((slug) => ({ params: { slug } }));
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = postFilePaths.map((postPath) => postPath.replace(/\.mdx?$/, '')).map((slug) => ({ params: { slug } }));
 
   return {
     paths,
     fallback: false
   };
 };
+
+export default Content;

@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const { promises: fs } = require('fs');
 const path = require('path');
 const RSS = require('rss');
@@ -20,7 +19,7 @@ async function generate() {
 
       feed.item({
         title: frontmatter.data.title,
-        url: 'https://davidlevai.com/blog/' + name.replace(/\.mdx?/, ''),
+        url: `https://davidlevai.com/blog/${name.replace(/\.mdx?/, '')}`,
         date: frontmatter.data.publishedAt,
         description: frontmatter.data.summary
       });
