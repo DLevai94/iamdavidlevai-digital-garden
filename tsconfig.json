@@ -24,7 +24,9 @@
       // "@api/*": ["./src/api/*"],
       // "@constants": ["./src/constants.ts"],
       "@data/*": ["./data/*"],
-      // "@typeDefs/*": ["./src/types/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@typeDefs/*": ["./src/types/*"],
       "@public/*": ["./public/*"],
     }
   },

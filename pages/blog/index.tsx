@@ -3,35 +3,41 @@ import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
-import Layout from '../../src/components/layout';
-import { POSTS_PATH, postFilePaths } from '../../src/lib/mdxUtils';
-import ContentHeading from '../../src/components/content-heading';
+import Layout from '@components/layout';
+import { POSTS_PATH, postFilePaths } from '@lib/mdxUtils';
+import ContentHeading from '@components/content-heading';
+import { FrontMatterProps } from '@typeDefs/post';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default function Index({ posts }) {
-  return (
-    <Layout>
-      <ContentHeading />
-      <section className="py-24">
-        <ul>
-          {posts.map((post) => (
-            <li key={post.filePath}>
-              <Link as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`} href="/blog/[slug]">
-                <a>{post.data.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
-  );
-}
+type ComponentProps = {
+  posts: {
+    content: string;
+    data: FrontMatterProps;
+    filePath: string;
+  }[];
+};
+
+const Index: React.FunctionComponent<ComponentProps> = ({ posts }) => (
+  <Layout>
+    <ContentHeading />
+    <section className="py-24">
+      <ul>
+        {posts.map((post) => (
+          <li key={post.filePath}>
+            <Link as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`} href="/blog/[slug]">
+              <a>{post.data.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </Layout>
+);
 
 type Props = {
   props: {
     posts: {
       content: string;
-      data: any;
+      data: unknown;
       filePath: string;
     }[];
   };
@@ -51,3 +57,5 @@ export const getStaticProps: GetStaticProps = async (): Promise<Props> => {
 
   return { props: { posts } };
 };
+
+export default Index;

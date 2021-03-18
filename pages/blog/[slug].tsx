@@ -12,19 +12,23 @@ import codetitle from 'remark-code-titles';
 import { useRouter } from 'next/router';
 import { NextSeo, BlogJsonLd } from 'next-seo';
 
-import Layout from '../../src/components/blog-layout';
-import Components from '../../src/components/mdx-components';
-import { POSTS_PATH, postFilePaths } from '../../src/lib/mdxUtils';
+import Layout from '@components/blog-layout';
+import Components from '@components/mdx-components';
+import { POSTS_PATH, postFilePaths } from '@lib/mdxUtils';
+import { FrontMatterProps } from '@typeDefs/post';
 
 const components: MdxRemote.Components = { Components };
 
-interface Props {
+type PageProps = {
   mdxSource: MdxRemote.Source;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  frontMatter: any;
-}
+  frontMatter: FrontMatterProps;
+};
 
-const Content: NextPage<Props> = ({ mdxSource, frontMatter }) => {
+type Props = {
+  props: PageProps;
+};
+
+const Content: NextPage<PageProps> = ({ mdxSource, frontMatter }) => {
   const router = useRouter();
   const content = hydrate(mdxSource, { components });
   return (
@@ -59,23 +63,7 @@ const Content: NextPage<Props> = ({ mdxSource, frontMatter }) => {
   );
 };
 
-// type FrontMatterProps = {
-//   title: string;
-//   slug: string;
-//   description: string;
-//   tags: string[];
-//   category: string;
-//   date: string;
-// };
-
-// interface Props {
-//   props: {
-//     mdxSource: MdxRemote.Source;
-//     frontMatter: FrontMatterProps;
-//   };
-// }
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }): Promise<Props> => {
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
   const { content, data } = matter(source);
@@ -87,7 +75,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     scope: data
   });
-  return { props: { mdxSource, frontMatter: data } };
+  return { props: { mdxSource, frontMatter: data as FrontMatterProps } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

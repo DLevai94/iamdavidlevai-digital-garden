@@ -3,8 +3,7 @@ import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const Navbar = () => {
+const Navbar: React.FunctionComponent = () => {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -54,7 +53,7 @@ const Navbar = () => {
               SaaS Toolkit
             </a>
           </Link>
-          <button onClick={switchTheme} className="w-6 h-6 mr-2">
+          <button type="button" onClick={switchTheme} className="w-6 h-6 mr-2">
             {theme === 'light' ? (
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
@@ -76,7 +75,10 @@ const Navbar = () => {
             )}
           </button>
         </nav>
-        <button className="tracking-wider inline-flex items-center px-3 py-2 mt-4 text-sm font-bold text-gray-700 bg-gray-200 dark:bg-gray-900 dark:text-gray-100 border-0 rounded focus:outline-none hover:bg-gray-100 md:mt-0 transition duration-300">
+        <button
+          type="button"
+          className="tracking-wider inline-flex items-center px-3 py-2 mt-4 text-sm font-bold text-gray-700 bg-gray-200 dark:bg-gray-900 dark:text-gray-100 border-0 rounded focus:outline-none hover:bg-gray-100 md:mt-0 transition duration-300"
+        >
           Work Together
           <svg
             fill="none"
@@ -88,7 +90,7 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             id=""
           >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
+            <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </button>
       </div>

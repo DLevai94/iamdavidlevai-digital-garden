@@ -1,15 +1,12 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import Footer from './footer';
-import Navbar from './navbar';
+import Footer from '@components/footer';
+import Navbar from '@components/navbar';
 
-const Layout = ({ children }) => {
-  return (
-    <>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-    </>
-  );
-};
+const Layout: React.FunctionComponent = ({ children }) => (
+  <>
+    <Navbar />
+    <main>{children}</main>
+    <Footer />
+  </>
+);
 
 export default Layout;

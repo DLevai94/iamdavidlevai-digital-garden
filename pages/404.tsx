@@ -1,8 +1,9 @@
+import type { NextPage } from 'next';
 import Link from 'next/link';
 import Button from '@components/button';
 import Layout from '@components/layout';
 
-const MissingPage: React.FunctionComponent = () => (
+const MissingPage: NextPage = () => (
   <Layout>
     <div className="space-y-8">
       This page doesn’t exist.
