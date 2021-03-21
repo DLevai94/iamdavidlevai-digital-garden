@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import Button from '@components/button';
 import Layout from '@components/layout';
 
@@ -8,11 +7,7 @@ const MissingPage: NextPage = () => (
     <div className="space-y-8">
       This page doesn’t exist.
       <div>
-        <Link href="/" passHref>
-          <a>
-            <Button>Return home</Button>
-          </a>
-        </Link>
+        <Button href="/" text="Return home" />
       </div>
     </div>
   </Layout>

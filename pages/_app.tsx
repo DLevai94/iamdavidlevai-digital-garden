@@ -9,7 +9,7 @@ import '@styles/globals.css';
 export default function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
   useAnalytics();
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark">
+    <ThemeProvider attribute="class" defaultTheme="dark" storageKey="davidlevai-theme">
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
