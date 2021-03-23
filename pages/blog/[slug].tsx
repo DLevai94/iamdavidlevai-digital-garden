@@ -42,8 +42,7 @@ const Content: NextPage<PageProps> = ({ mdxSource, frontMatter }) => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://twitter.com/intent/tweet?url=https://davidlevai.com${router?.asPath}&via=iamdavidlevai&text=${frontMatter.description}`}
-          >
+            href={`https://twitter.com/intent/tweet?url=https://davidlevai.com${router?.asPath}&via=iamdavidlevai&text=${frontMatter.description}`}>
             Twitter
           </a>
           .
@@ -64,16 +63,16 @@ const Content: NextPage<PageProps> = ({ mdxSource, frontMatter }) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }): Promise<Props> => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
+  const postFilePath = path.join(POSTS_PATH, `${params?.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
   const { content, data } = matter(source);
   const mdxSource = await renderToString(content, {
     components,
     mdxOptions: {
       remarkPlugins: [codetitle],
-      rehypePlugins: [RHP]
+      rehypePlugins: [RHP],
     },
-    scope: data
+    scope: data,
   });
   return { props: { mdxSource, frontMatter: data as FrontMatterProps } };
 };
@@ -83,7 +82,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   };
 };
 

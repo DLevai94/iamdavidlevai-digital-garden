@@ -1,9 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import Link from 'next/link';
 import Image from 'next/image';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const CustomLink = (props) => {
-  const href = props.href;
+type Props = {
+  href: string;
+};
+
+const CustomLink: React.FunctionComponent<Props> = (props) => {
+  const { href } = props;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
   if (isInternalLink) {
@@ -19,7 +23,7 @@ const CustomLink = (props) => {
 
 const MDXComponents = {
   Image,
-  a: CustomLink
+  a: CustomLink,
 };
 
 export default MDXComponents;
